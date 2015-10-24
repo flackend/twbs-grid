@@ -1,51 +1,114 @@
 <!-- Import Polymer -->
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="css/bs-col-offset.html">
+<link rel="import" href="css/bs-col-pull.html">
+<link rel="import" href="css/bs-col-push.html">
+<link rel="import" href="css/bs-col.html">
+<link rel="import" href="css/bs-container.html">
+<link rel="import" href="css/bs-row.html">
+
 
 <!-- Define "container" custom element -->
-<polymer-element name="bs-container" noscript>
+<dom-module id="bs-container">
   <template>
-    <link rel="stylesheet" href="css/bs-container.css">
+    <style include="bs-container-css"></style>
     <content></content>
   </template>
-</polymer-element>
+  <script>
+    Polymer({is: "bs-container"});
+  </script>
+</dom-module>
 
 <!-- Define "row" custom element -->
-<polymer-element name="bs-row" noscript>
+<dom-module id="bs-row">
   <template>
-    <link rel="stylesheet" href="css/bs-row.css">
+    <style include="bs-row-css"></style>
     <content></content>
   </template>
-
-</polymer-element>
+  <script>
+    Polymer({is: "bs-row"});
+  </script>
+</dom-module>
 
 <!-- Define "col" custom element -->
-<polymer-element name="bs-col" attributes="xs sm md lg xspull smpull mdpull lgpull xspush smpush mdpush lgpush xsoffset smoffset mdoffset lgoffset">
+<dom-module id="bs-col">
   <template>
-    <link rel="stylesheet" href="css/bs-col.min.css">
-    <link rel="stylesheet" href="css/bs-col-pull.min.css">
-    <link rel="stylesheet" href="css/bs-col-push.min.css">
-    <link rel="stylesheet" href="css/bs-col-offset.min.css">
+    <style include="bs-col-css"></style>
+    <style include="bs-col-pull-css"></style>
+    <style include="bs-col-push-css"></style>
+    <style include="bs-col-offset-css"></style>
     <content></content>
   </template>
 
   <script>
-    Polymer('bs-col', {
-      xs: "12",
-      sm: "12",
-      md: "12",
-      lg: "12",
-      xspull: "0",
-      smpull: "0",
-      mdpull: "0",
-      lgpull: "0",
-      xspush: "0",
-      smpush: "0",
-      mdpush: "0",
-      lgpush: "0",
-      xsoffset: "0",
-      smoffset: "0",
-      mdoffset: "0",
-      lgoffset: "0"
+    Polymer({
+      is: "bs-col",
+      properties: {
+        xs: {
+          type: String,
+          value: "12"
+        },
+        sm: {
+          type: String,
+          value: "12"
+        },
+        md: {
+          type: String,
+          value: "12"
+        },
+        lg: {
+          type: String,
+          value: "12"
+        },
+        xspull: {
+          type: String,
+          value: "0"
+        },
+        smpull: {
+          type: String,
+          value: "0"
+        },
+        mdpull: {
+          type: String,
+          value: "0"
+        },
+        lgpull: {
+          type: String,
+          value: "0"
+        },
+        xspush: {
+          type: String,
+          value: "0"
+        },
+        smpush: {
+          type: String,
+          value: "0"
+        },
+        mdpush: {
+          type: String,
+          value: "0"
+        },
+        lgpush: {
+          type: String,
+          value: "0"
+        },
+        xsoffset: {
+          type: String,
+          value: "0"
+        },
+        smoffset: {
+          type: String,
+          value: "0"
+        },
+        mdoffset: {
+          type: String,
+          value: "0"
+        },
+        lgoffset: {
+          type: String,
+          value: "0"
+        }
+      }
     });
   </script>
-</polymer-element>
+</dom-module>
